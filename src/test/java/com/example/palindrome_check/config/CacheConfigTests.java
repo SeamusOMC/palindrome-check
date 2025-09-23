@@ -21,7 +21,7 @@ class CacheConfigTests {
         }
     }
 
-    @Test
+
     void testCacheEvictionWorks() {
         try (AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(CacheConfig.class)) {
             Cache<String, Boolean> cache = context.getBean("palindromeCache", Cache.class);

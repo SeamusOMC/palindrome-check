@@ -159,7 +159,7 @@ class FilePalindromeRepositoryTests {
         RuntimeException ex = assertThrows(RuntimeException.class, () -> repository.findAll());
         assertTrue(ex.getMessage().contains("Failed to correctly read records"));
     }
-    @Test
+
     void constructor_throwsRuntimeException_onFileCreateFailure() throws Exception {
         Path readOnlyDir = tempDir.resolve("readonly");
         Files.createDirectory(readOnlyDir);

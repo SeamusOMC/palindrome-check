@@ -44,6 +44,7 @@ public class MetricBasedTesting {
         assertTrue(secondResult, "Cached computation must be correct");
 
         System.out.printf("Cache miss: %d ns, Cache hit: %d ns%n", durationMiss, durationHit);
+        System.out.printf("Cache miss: %d ms, Cache hit: %d ms%n", durationMiss / 1_000_000, durationHit / 1_000_000);
         assertTrue(durationHit < durationMiss, "Cached call should be faster than first call");
     }
 }

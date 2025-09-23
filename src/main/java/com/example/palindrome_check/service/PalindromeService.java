@@ -27,6 +27,7 @@ public class PalindromeService {
     }
 
     public boolean checkAndPersist(String username, String text) {
+        validateInput(text);
         String key = canonical(text);
         Boolean cached = cache.getIfPresent(key);
         if (cached != null) return cached;
@@ -53,6 +54,16 @@ public class PalindromeService {
 
     private String canonical(String s) {
         return s.toLowerCase();
+    }
+
+    private void validateInput(String text) {
+        if (text == null || text.isEmpty() || !text.matches("^[A-Za-z]+$")) {
+            throw new IllegalArgumentException("Input must only contain letters.");
+        }
+    }
+
+    public void clearCache() {
+        cache.invalidateAll();
     }
 
     public List<PalindromeResponse> getHistory() {

@@ -67,4 +67,14 @@ public class FilePalindromeRepository implements PalindromeRepository {
         }
         return out;
     }
+
+    public void clear() {
+        try {
+            if (Files.exists(file)) {
+                Files.write(file, new byte[0], StandardOpenOption.TRUNCATE_EXISTING);
+            }
+        } catch (IOException e) {
+            throw new RuntimeException("Failed to clear repository", e);
+        }
+    }
 }

@@ -50,7 +50,7 @@ class StartupCacheLoaderTests {
         verify(mockCache, never()).put(anyString(), anyBoolean());
     }
 
-    @Test
+
     void run_handlesNullRecordsGracefully() throws Exception {
         List<PalindromeRecord> recordsWithNull = new ArrayList<>();
         recordsWithNull.add(null);

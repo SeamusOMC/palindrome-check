@@ -76,6 +76,12 @@ GET /api/palindrome/history
 
 - Returns a list of all previously checked palindromes.  
 - Useful to see what has been stored in `data/processed_palindromes.jsonl`.
+
+To quickly test functionality through a bash curl feel free to use the below command
+```bash
+ curl -X POST http://localhost:8080/api/palindrome/check   -H "Content-Type: application/json"   -d '{"username":"testUser","text":"cIvic"}'
+```
+
 ## 🌳Project Tree 
 ```
 src/
@@ -90,3 +96,7 @@ src/
    ├─ static
    └─ templates
 ```
+
+To find out more about the Project, its implementation and the testing process as it develops, please see link provided below
+
+[Confluence Page](https://seamusg.atlassian.net/wiki/external/MDE5MjM5MGE5ZWU4NGU5ZTlmY2FjMGNmYjZhODU3ZGE)
